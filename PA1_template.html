@@ -107,9 +107,9 @@ ggplot(data=average, aes(x=interval, y=steps)) +
 <h2>Imputing missing values</h2>
 <p>There are many days/intervals where there are missing values (coded as NA). The presence of missing days may introduce bias into some calculations or summaries of the data.</p>
 <p>Total number of missing values</p>
-<pre class="r"><code>missing &lt;- is.na(act_data$steps)
-table(missing)</code></pre>
-<pre><code>## missing
+<pre class="r"><code>missing_values &lt;- is.na(act_data$steps)
+table(missing_values)</code></pre>
+<pre><code>## missing_values
 ## FALSE  TRUE 
 ## 15264  2304</code></pre>
 <p>All of the missing values are filled in with mean value for that 5-minute interval.</p>

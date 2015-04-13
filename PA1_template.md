@@ -92,12 +92,12 @@ There are many days/intervals where there are missing values (coded as NA). The 
 Total number of missing values
 
 ```r
-missing <- is.na(act_data$steps)
-table(missing)
+missing_values <- is.na(act_data$steps)
+table(missing_values)
 ```
 
 ```
-## missing
+## missing_values
 ## FALSE  TRUE 
 ## 15264  2304
 ```
