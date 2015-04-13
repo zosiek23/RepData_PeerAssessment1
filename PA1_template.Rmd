@@ -8,11 +8,31 @@ output:
 
 ## Loading and preprocessing the data
 
+Unzip and load the csv file
+
+``` {r simulation, echo = TRUE}
 unzip(zipfile="activity.zip")
 act_data <- read.csv("activity.csv")
+```
+
 
 ## What is mean total number of steps taken per day?
+Load needed libraries
+``` {r}
+library(ggplot2)
+```
+Make a histogram of the total number of steps taken each day
+``` {r}
+totnum.steps <- tapply(act_data$steps, act_data$date, FUN=sum, na.rm=TRUE)
+# qplot(totnum.steps, binwidth=1000, xlab="Total number of steps taken each day")
+hist(totnum.steps,main='Total number of steps per day',xlab='Total number of steps per day',col='blue')
+```
 
+Calculate and report the mean and median of the total number of steps taken per day
+``` {r}
+mean(totnum.steps, na.rm=TRUE)
+median(totnum.steps, na.rm=TRUE)
+```
 
 
 ## What is the average daily activity pattern?
